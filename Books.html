@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+	<link rel="stylesheet" href="style.css">
 	<script src="Books.js" type="text/javascript"></script>
 	<title></title>
 </head>
-<body>
-	<div>
-		<p id="myBooks">Hello</p>
-	</div>
 
+<body>
+	<div id="tableContainer">
+		<table id="myTable">
+			<tr id="tableHead">
+				<th>- Title -</th>
+				<th>- Author -</th>
+				<th>- Pages -</th>
+				<th>- Read -</th>
+				<th>- Enjoyed -</th>
+			</tr>
+			<tr id="tableData">
+				<td id="title">The Hobbit</td>
+				<td id="author">J.R.R. Tolkien</td>
+				<td id="pages">295 pages</td>
+				<td id="read">Not read yet</td>
+				<td id="enjoyed">Yes</td>
+			</tr>
+		</table>
+	</div>
+	<div id="formContainer"></div>
+	<br>
+	<button id="newBook" onclick="createForm()">New Book</button>
+	<button id="addBook">Submit</button>
 </body>
 </html>
