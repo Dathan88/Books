@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="style.css">
-	<script src="Books.js" type="text/javascript"></script>
+	<script src="Books.js" type="text/javascript" async></script>
 	<title></title>
 </head>
 
@@ -10,24 +10,17 @@
 	<div id="tableContainer">
 		<table id="myTable">
 			<tr id="tableHead">
+				<caption>Book Check List</caption>
 				<th>- Title -</th>
 				<th>- Author -</th>
 				<th>- Pages -</th>
 				<th>- Read -</th>
-				<th>- Enjoyed -</th>
-			</tr>
-			<tr id="tableData">
-				<td id="title">The Hobbit</td>
-				<td id="author">J.R.R. Tolkien</td>
-				<td id="pages">295 pages</td>
-				<td id="read">Not read yet</td>
-				<td id="enjoyed">Yes</td>
 			</tr>
 		</table>
 	</div>
+		<br>
 	<div id="formContainer"></div>
-	<br>
+		<br>
 	<button id="newBook" onclick="createForm()">New Book</button>
-	<button id="addBook">Submit</button>
 </body>
 </html>
