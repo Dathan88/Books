@@ -1,20 +1,35 @@
 const bookDisplay = document.getElementById('myBooks');
-const theHobbit =  new Book('The Hobbit', 'J.R.R. Tolkien', '295 pages', false);
-let myLibrary = [theHobbit];
+const myForm = document.getElementById("myForm");
+const hobbit =  new Book('The Hobbit', 'J.R.R. Tolkien', '295 pages', 0);
+let myLibrary = [hobbit];
 
 function Book(title, author, pages, read) {
 	this.title = title,
 	this.author = author,
 	this.pages = pages,
-	this.read = (read === true) ? "Yes" : "No",
+	this.read = (read >= 1) ? "Yes" : "No",
 	this.info = function() {
 		return this.title + " by " + this.author + " , " + this.pages + " , " + this.read;
 	};
 }
 
-function addBookToLibrary(book) {
-	console.log(book);
-	myLibrary.push(book);
+function newBook() {
+	document.getElementById("formContainer").style.display = "block";
+
+	return false;
+}
+
+function addBookToLibrary() {
+	let title = document.getElementById('title').value;
+	let author = document.getElementById('author').value;
+	let pages = document.getElementById('pages').value;
+	let read = document.querySelector('input[name="read"]:checked').value;
+
+	const book1 = new Book(title, author, pages, read);
+
+	console.log(book1);
+	myLibrary.push(book1);
+	console.log(myLibrary);
 }
 
 function render(b) {
@@ -22,7 +37,6 @@ function render(b) {
 
     myLibrary.forEach((item, index) => {
     	for(let key in item) {
-    		console.log(item[key]);
     		if(typeof item[key] === "function") {
     			break;
     		} 
@@ -38,36 +52,6 @@ function render(b) {
     });
 }
 
-function createForm() {
-	const bookValues = ["Title", "Author", "Pages", "Read"];
-	const formDiv = document.querySelector("#formContainer");
-	const form = document.createElement("FORM");
-		form.setAttribute("name", "myForm");
-		form.setAttribute("id", "myForm");
-		formDiv.appendChild(form);
-	const fieldSet = document.createElement("FIELDSET");
-		fieldSet.setAttribute("id", "mySet");
-		form.appendChild(fieldSet);
-		
-	for(var i = 0; i < bookValues.length; i++) {
-		const category = document.createElement("p");
-			category.innerHTML += bookValues[i] + ":" + "<br>";
-			fieldSet.appendChild(category);
-		const formInput = document.createElement("INPUT");
-			formInput.setAttribute("text", "text");
-			formInput.setAttribute("value", "");
-			category.appendChild(formInput);
-	};
 
-	const submit = document.createElement("BUTTON");
-		submit.setAttribute("id", "Submit");
-		submit.setAttribute("type", "submit");
-		submit.setAttribute("value", "Submit");
-		fieldSet.appendChild(submit);
-	const btnLabel = document.createTextNode("Submit");
-		submit.appendChild(btnLabel);
-}
-
-console.log(theHobbit.info());
-console.log(addBookToLibrary());
-console.log(render(theHobbit));
+console.log(hobbit.info());
+console.log();

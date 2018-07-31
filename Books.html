@@ -6,7 +6,7 @@
 	<title></title>
 </head>
 
-<body>
+<body onload="render()">
 	<div id="tableContainer">
 		<table id="myTable">
 			<tr id="tableHead">
@@ -14,13 +14,46 @@
 				<th>- Title -</th>
 				<th>- Author -</th>
 				<th>- Pages -</th>
-				<th>- Read -</th>
+				<th>- Finished -</th>
 			</tr>
 		</table>
 	</div>
 		<br>
-	<div id="formContainer"></div>
+	<div id="formContainer">
+		<form id="myForm" name="myForm" onsubmit="event.preventDefault(); addBookToLibrary()" />
+			<section>
+				<h2>~ Add New Book Info ~</h2>
+				<fieldset id="bookDetails">
+					<legend>Book Details</legend>
+					<p>
+						<label for="title">Title: <input id="title" type="text" name="title" /></label>
+					</p>
+					<p>
+						<label for="author">Author: <input id="author" type="text" name="author" /></label>
+					</p>
+					<p>
+						<label for="pages">Pages: <input id="pages" type="number" name="pages" /></label>
+					</p>
+				</fieldset>
+					<br>
+				<fieldset id="bookFinished">
+					<legend>Finished</legend>
+						<p>	
+							<label for="yes">Yes</label>
+							<input id="yes" type="radio" name="read"  value="1" checked/>
+						</p>
+						<p>
+							<label for="no">Not Yet</label>
+							<input id="no" type="radio" name="read"  value="0" />
+						</p>
+				</fieldset>
+						<br>
+					<input class="btns" id="submit" type="submit" value="Submit" />
+					<button class="btns" id="reset" type="reset" value="Reset">Clear</button>
+			</section>
+		</form>
+	</div>
 		<br>
-	<button id="newBook" onclick="createForm()">New Book</button>
+	<button class="showForm" id="newBook" onclick="newBook()">New Book</button>
 </body>
 </html>

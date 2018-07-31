@@ -3,10 +3,45 @@ table, th, td {
 	text-align: center;
 }
 
-#formContainer {
+form {
+	margin: 0 auto;
+    width: 400px;
+    padding: 0px 1em 1em 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    text-align: center;
+}
+
+section {
+	
+}
+
+legend {
+	word-spacing: 5px;
+	font-family: "Lucida Console", Monaco, monospace;
+}
+
+
+#bookDetails p {
 
 }
 
+#bookFinished p {
+	margin: 0px;
+}
+
+#formContainer {
+	display: none;
+}
+
 #tableContainer {
+
+}
+
+#bookInput {
+	text-align: center;
+}
+
+.btns {
 
 }
