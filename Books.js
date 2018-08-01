@@ -26,35 +26,37 @@ function addBookToLibrary() {
 	let read = document.querySelector('input[name="read"]:checked').value;
 	const book1 = new Book(title, author, pages, read);
 
-	console.log(book1);
 	myLibrary.push(book1);
-	document.getElementById("myTr").remove();
+
+	let tbody = document.getElementById("tableBody");
+	tbody.innerHTML = '';
+
 	render();
-	console.log(myLibrary);
 }
 
-function render(b) {
+function render() {
+	console.log(myLibrary);
+	let table = document.getElementById("myTable");
+	let tbody = document.getElementById("tableBody");
 
-    myLibrary.forEach((book) => {
-		let table = document.getElementById("myTable");
-		let row = document.createElement("TR");
-			row.setAttribute("id", "myTr");
-		table.appendChild(row);
+	myLibrary.forEach((item, index) => {
+		let i = 0;
+		let rowPlace = index;
+		let row = tbody.insertRow(rowPlace);
+		row.setAttribute('id', 'myRows');
+			
+		for(let key in item) {
+			if(typeof item[key] === "function") {
+				continue;
+			}
+			let bookData = row.insertCell(i);
+			bookData.innerHTML = item[key];
 
-    	for(let key in item) {
-    		if(typeof item[key] === "function") {
-    			break;
-    		}
-
-		let bookData = document.createElement("TD");
-		let text = document.createTextNode(item[key]);
-			bookData.appendChild(text);
-		document.getElementById("myTr").appendChild(bookData);
-
-  		}
+			i++;
+		};
     });
 }
 
-console.log(hobbit.info());
 
+console.log(hobbit.info());
 document.getElementsByTagName("body").onload = myLibrary.push(hobbit), render();
