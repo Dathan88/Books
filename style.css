@@ -1,14 +1,7 @@
 table, th, td {
+	margin: 0 auto;
 	border: 1px solid black;
 	border-collapse: collapse;
-}
-
-th, td {
-	padding: 5px;
-}
-
-th {
-	text-align: left;
 }
 
 form {
@@ -20,18 +13,9 @@ form {
     text-align: center;
 }
 
-section {
-	
-}
-
 legend {
 	word-spacing: 5px;
 	font-family: "Lucida Console", Monaco, monospace;
-}
-
-
-#bookDetails p {
-
 }
 
 #bookFinished p {
@@ -42,14 +26,6 @@ legend {
 	display: none;
 }
 
-#tableContainer {
-
-}
-
 #bookInput {
 	text-align: center;
-}
-
-.btns {
-
 }
