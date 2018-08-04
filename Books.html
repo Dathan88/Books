@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
+	<link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
 	<link rel="stylesheet" href="style.css">
 	<script src="Books.js" type="text/javascript" async></script>
 	<title></title>
@@ -9,32 +10,38 @@
 <body>
 	<div id="tableContainer">
 		<table id="myTable">
-			<thead id="tableHead"><caption>Book Check List</caption></thead>
+				<tr id="tableHead">
+					<caption>~ Book Check List ~</caption>
+					<th>Book Details</th>
+					<th>Finished</th>
+					<th>Delete</th>
+				</tr>
+
 			<tbody id="tableBody">
 			</tbody>
 		</table>
 	</div>
 		<br>
 	<div id="formContainer">
-		<form id="myForm" name="myForm" onsubmit="event.preventDefault(); addBookToLibrary()" />
+		<form id="myForm" name="myForm" onsubmit="event.preventDefault(); addBookToLibrary();" />
 			<section>
 				<h2>~ Add New Book Info ~</h2>
 				<fieldset id="bookDetails">
 					<legend>Book Details</legend>
 					<p>
-						<label for="title">Title: <input id="title" type="text" name="title" /></label>
+						<label for="title">Title: <input id="title" type="text" name="title" autocomplete="off" required/></label>
 					</p>
 					<p>
-						<label for="author">Author: <input id="author" type="text" name="author" /></label>
+						<label for="author">Author: <input id="author" type="text" name="author" autocomplete="off" required/></label>
 					</p>
 					<p>
-						<label for="pages">Pages: <input id="pages" type="number" name="pages" /></label>
+						<label for="pages">Pages: <input id="pages" type="number" name="pages" autocomplete="off" required/></label>
 					</p>
 				</fieldset>
 					<br>
 				<fieldset id="bookFinished">
 					<legend>Finished</legend>
-						<p>	
+						<p>
 							<label for="yes">Yes</label>
 							<input id="yes" type="radio" name="read"  value="1" checked/>
 						</p>
@@ -45,7 +52,6 @@
 				</fieldset>
 						<br>
 					<input class="btns" id="submit" type="submit" value="Submit" />
-					<button class="btns" id="reset" type="reset" value="Reset">Clear</button>
 			</section>
 		</form>
 	</div>
