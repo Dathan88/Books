@@ -21,6 +21,7 @@ function Book(title, author, pages, read) {
 
 function newBook() {
 	document.getElementById("formContainer").style.display = "block";
+	document.getElementById("formBtn").style.display = "none";
 	return false;
 }
 
@@ -40,6 +41,7 @@ function addBookToLibrary(e) {
 }
 
 function render() {
+	document.getElementById("formBtn").style.display = "block";
 	let tbody = document.getElementById("tableBody");
 
 	myLibrary.forEach((item, index) => {
@@ -49,21 +51,27 @@ function render() {
 		let bookData = row.insertCell(0);
 			bookData.innerHTML = item.info();
 		let finished = document.createElement("TD");
-			finished.setAttribute('class', "btn");
-			finished.textContent = item.read;
 			row.insertAdjacentElement("beforeend", finished);
+		let finishedBtn = document.createElement("BUTTON");
+			finishedBtn.setAttribute('class', "btn");
+			finishedBtn.setAttribute('id', "finishedbtn");
+			finishedBtn.textContent = item.read;
+			finished.append(finishedBtn);
 
-			finished.addEventListener("click", (e) => {
-				if (finished.innerHTML === "Yes") {
-					finished.innerHTML = "No";
+			finishedBtn.addEventListener("click", (e) => {
+				if (finishedBtn.innerHTML === "Yes") {
+					finishedBtn.innerHTML = "No";
 				} else {
-					finished.innerHTML = "Yes";
+					finishedBtn.innerHTML = "Yes";
 				}
 			});
 		let remove = document.createElement("TD");
-			remove.setAttribute('class', "btn");
-			remove.textContent = "Remove From List";
 			row.insertAdjacentElement("beforeend", remove);
+		let removeBtn = document.createElement("BUTTON");
+			removeBtn.setAttribute('class', "btn");
+			removeBtn.setAttribute('id', "removeBtn");
+			removeBtn.textContent = "Remove From List";
+			remove.append(removeBtn);
 
 			remove.addEventListener("click", (e) => {
 		let child = document.getElementById(item.title);
@@ -78,3 +86,8 @@ function render() {
 console.log(myForm.parentNode);
 console.log(hobbit.info());
 document.getElementsByTagName("body").onload = myLibrary.push(hobbit, potter, bible), render();
+
+// let btn = document.createElement("BUTTON");
+// 			btn.setAttribute('class', "btn");
+// 			btn.textContent = item.read;
+// 			row.insertAdjacentElement("beforeend", finished);

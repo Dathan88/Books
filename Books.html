@@ -4,22 +4,24 @@
 	<link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
 	<link rel="stylesheet" href="style.css">
 	<script src="Books.js" type="text/javascript" async></script>
-	<title></title>
+	<title>Books</title>
 </head>
 
 <body>
 	<div id="tableContainer">
 		<table id="myTable">
-				<tr id="tableHead">
+			<colgroup>
+			<col id="column1">
+			<col id="column2">
+			<col id="column3">
+			</colgroup>
 					<caption>~ Book Check List ~</caption>
 					<th>Book Details</th>
-					<th>Finished</th>
-					<th>Delete</th>
-				</tr>
-
-			<tbody id="tableBody">
-			</tbody>
+					<th>* Finished *</th>
+					<th>* Delete *</th>
+			<tbody id="tableBody"></tbody>
 		</table>
+		<p id="hint">* Click Values To Change *</p>
 	</div>
 		<br>
 	<div id="formContainer">
@@ -51,11 +53,11 @@
 						</p>
 				</fieldset>
 						<br>
-					<input class="btns" id="submit" type="submit" value="Submit" />
+					<input id="submit" type="submit" value="Submit" />
 			</section>
 		</form>
 	</div>
 		<br>
-	<button class="showForm" id="newBook" onclick="newBook()">New Book</button>
+	<button class="formBtn" id="formBtn" onclick="newBook()"><span>Add Book</span></button>
 </body>
 </html>

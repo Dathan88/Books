@@ -1,31 +1,35 @@
-table, th, td {
-	border-bottom: 1px solid black;
-	border-collapse: collapse;
+div#tableContainer {
+	margin:  20px;
+	padding: 20px;
+	overflow: auto;
 }
 
 table {
+	border-collapse: collapse;
 	margin: 0 auto;
 	table-layout: auto;
-	width: 100%;
-}
-
-th, td {
-	padding: 3px 0px;
-	text-align: center;
-	vertical-align: center;
+	height: 95%;
+	width: 95%;
+	box-shadow: 10px 10px 5px grey;
 }
 
 th {
 	background-color: DodgerBlue;
 	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	text-transform:  uppercase;
+	letter-spacing: 1px;
 	font-family: Arial, Helvetica, sans-serif;
-	height: 20px;
 }
 
-td {
-	font-family: Alike;
-	text-transform: capitalize;
+th, td {
+	text-align: center;
+}
+
+tr {
+	height: 45px;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
 }
 
 tr:nth-child(even) {
@@ -35,25 +39,73 @@ tr:nth-child(even) {
 tr:hover {
 	background-color: rgb(0, 0, 255);
 	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-#tableContainer {
-	margin: 1em auto;
-	width: 85%;
-	overflow: auto;
+td {
+	font-family: Alike;
+	text-transform: capitalize;
+	font-variant: small-caps;
+	font-size: 1.50em;
 }
+
+#column1 {
+	width: auto;
+}
+
+#column2 {
+	width: 15%;
+}
+
+#column3 {
+	width: 35%;
+}
+
+.btn {
+	position: relative;
+	border: none;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-size: 16px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	box-shadow:  3px 3px 3px grey;
+	background: linear-gradient(black, grey, black);
+}
+
+.btn:hover {
+	background: linear-gradient(grey, black, grey);
+	color: white;
+	box-shadow: 3px 3px 3px black;
+}
+
+.btn:active {
+	box-shadow: 3px 3px 3px black;
+	transform: translateY(4px);
+}
+
+.btn:focus { outline: none; }
 
 #formContainer {
 	display: none;
 }
 
+
 form {
 	margin: 0 auto;
     width: 400px;
     padding: 0px 1em 1em 1em;
-    border: 1px solid #CCC;
-    border-radius: 1em;
+    border: 2px solid black;
+    border-radius: 6em 0em;
     text-align: center;
+    font-variant: small-caps;
+    box-shadow: 10px 10px 5px grey;
+}
+
+fieldset {
+	 border-radius: 5px;
+	 border: 2px dashed black;
+	 font-weight: 550;
 }
 
 legend {
@@ -61,6 +113,35 @@ legend {
 	font-family: "Lucida Console", Monaco, monospace;
 }
 
+
 #bookFinished p {
 	margin: 0px;
+}
+
+#formBtn {
+	position: relative;
+	padding: 15px 32px;
+	margin: 4px auto;
+	color: white;
+	font-size: 16px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	box-shadow: 10px 10px 5px grey;
+	border-radius: 10px;
+	background: linear-gradient(black, grey, black);
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#formBtn:hover {
+	background: linear-gradient(grey, black, grey);
+}
+
+#formBtn:focus {
+	outline: none;
+}
+
+#hint {
+	margin: 25px 0px 0px 35px;
+	font-weight: 900;
+	font-size: 14px;
+	letter-spacing: .75px;
 }
