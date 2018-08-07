@@ -1,6 +1,6 @@
 div#tableContainer {
-	margin:  20px;
-	padding: 20px;
+	margin:  1.25em;
+	padding: 1.25em;
 	overflow: auto;
 }
 
@@ -10,36 +10,37 @@ table {
 	table-layout: auto;
 	height: 95%;
 	width: 95%;
-	box-shadow: 10px 10px 5px grey;
+	box-shadow: 0.625em 0.625em 0.3125em grey;
+}
+
+caption {
+	font-weight: bold;
+	font-size: 1.25em;
 }
 
 th {
 	background-color: DodgerBlue;
 	color: white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-shadow: --0.0625em 0 black, 0 0.0625em black, 0.0625em 0 black, 0 -0.0625em black;
 	text-transform:  uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 0.0625em;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-th, td {
-	text-align: center;
-}
+th, td { text-align: center; }
 
 tr {
-	height: 45px;
-	border-bottom: 1px solid black;
-	border-right: 1px solid black;
+	height: 2.8125em;
+	border-bottom: 0.0625em solid black;
+	border-right: 0.0625em solid black;
 }
 
-tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
+tr:nth-child(even) { background-color: #cce0ff; }
 
 tr:hover {
-	background-color: rgb(0, 0, 255);
+	background-color: #4d94ff;
 	color: white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-shadow: -0.0625em 0 black, 0 0.0625em black, 0.0625em 0 black, 0 -0.0625em black;
 }
 
 td {
@@ -49,17 +50,11 @@ td {
 	font-size: 1.50em;
 }
 
-#column1 {
-	width: auto;
-}
+#column1 { width: auto; }
 
-#column2 {
-	width: 15%;
-}
+#column2 { width: 10%; }
 
-#column3 {
-	width: 35%;
-}
+#column3 { width: 20%; }
 
 .btn {
 	position: relative;
@@ -67,81 +62,73 @@ td {
 	width: 100%;
 	height: 100%;
 	color: white;
-	font-size: 16px;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	box-shadow:  3px 3px 3px grey;
+	font-size: 1em;
+	text-shadow: -0.0625em 0 black, 0 0.0625em black, 0.0625em 0 black, 0 -0.0625em black;
+	box-shadow:  0.1875em 0.1875em 0.1875em grey;
 	background: linear-gradient(black, grey, black);
 }
 
 .btn:hover {
 	background: linear-gradient(grey, black, grey);
 	color: white;
-	box-shadow: 3px 3px 3px black;
+	box-shadow: 0.1875em 0.1875em 0.1875em black;
 }
 
 .btn:active {
-	box-shadow: 3px 3px 3px black;
-	transform: translateY(4px);
+	box-shadow: 0.1875em 0.1875em 0.1875em black;
+	transform: translateY(0.09375em);
 }
 
 .btn:focus { outline: none; }
 
-#formContainer {
-	display: none;
-}
+#formContainer { display: none; }
 
 
 form {
 	margin: 0 auto;
-    width: 400px;
+    width: 25em;
     padding: 0px 1em 1em 1em;
-    border: 2px solid black;
+    border: 0.125em solid black;
     border-radius: 6em 0em;
     text-align: center;
     font-variant: small-caps;
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 0.625em 0.625em 0.3125em grey;
 }
 
 fieldset {
-	 border-radius: 5px;
-	 border: 2px dashed black;
+	 border-radius: 0.3125em;
+	 border: 0.125em dashed black;
 	 font-weight: 550;
 }
 
 legend {
-	word-spacing: 5px;
+	word-spacing: 0.3125em;
 	font-family: "Lucida Console", Monaco, monospace;
 }
 
 
-#bookFinished p {
-	margin: 0px;
-}
+#bookFinished p { margin: 0px; }
 
 #formBtn {
 	position: relative;
-	padding: 15px 32px;
-	margin: 4px auto;
+	padding: 0.65625em 2em;
+	margin: 0.25em auto;
 	color: white;
-	font-size: 16px;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	box-shadow: 10px 10px 5px grey;
-	border-radius: 10px;
+	font-size: 1em;
+	text-shadow: -0.0625em 0 black, 0 0.0625em black, 0.0625em 0 black, 0 -0.0625em black;
+	box-shadow: 0.625em 0.625em 0.3125em grey;
+	border-radius: 0.625em;
 	background: linear-gradient(black, grey, black);
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	text-shadow: -0.0625em 0 black, 0 0.0625em black, 0.0625em 0 black, 0 -0.0625em black;
 }
 
-#formBtn:hover {
-	background: linear-gradient(grey, black, grey);
-}
+#formBtn:hover { background: linear-gradient(grey, black, grey); }
 
-#formBtn:focus {
-	outline: none;
-}
+#formBtn:focus { outline: none; }
 
 #hint {
-	margin: 25px 0px 0px 35px;
+	margin: 1.5625em 0px 0px 2.1875em;
 	font-weight: 900;
-	font-size: 14px;
-	letter-spacing: .75px;
+	font-size: 0.875em;
+	letter-spacing: 0.046875em;
 }

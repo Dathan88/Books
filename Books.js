@@ -3,19 +3,19 @@
 
 const myForm = document.getElementById("myForm");
 const table = document.getElementById("myTable");
-const hobbit =  new Book('The Hobbit', 'J.R.R. Tolkien', '295', 0);
-const potter = new Book("Harry Potter", "J.K. Rowling", "489", 1);
-const bible = new Book("The Bible", "Jesus H. Christ", "572", 1);
+const hobbit =  new Book('The Hobbit', 'J.R.R. Tolkien', 295, 0);
+const potter = new Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 223, 1);
+const bible = new Book("The Bible", "Various Authors", 1200, 1);
 
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
 	this.title = title,
 	this.author = author,
-	this.pages = pages,
+	this.pages = function () { return pages.toLocaleString("en"); };
 	this.read = (read >= 1) ? "Yes" : "No",
 	this.info = function() {
-		return  this.title + " by " + this.author + " - " + this.pages + " pages";
+		return  this.title + " by " + this.author + " - " + this.pages() + " pages";
 	};
 }
 
@@ -83,11 +83,12 @@ function render() {
     });
 }
 
-console.log(myForm.parentNode);
-console.log(hobbit.info());
-document.getElementsByTagName("body").onload = myLibrary.push(hobbit, potter, bible), render();
 
-// let btn = document.createElement("BUTTON");
-// 			btn.setAttribute('class', "btn");
-// 			btn.textContent = item.read;
-// 			row.insertAdjacentElement("beforeend", finished);
+function myNumber(x) {
+	return x.toLocaleString("en");
+}
+
+console.log(myNumber(245625.45));
+console.log(bible.pages());
+
+document.getElementsByTagName("body").onload = myLibrary.push(hobbit, potter, bible), render();
