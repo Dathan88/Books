@@ -1,6 +1,3 @@
-/*jshint esversion: 6 */
-/*jshint -W030*/
-
 const myForm = document.getElementById("myForm");
 const table = document.getElementById("myTable");
 const hobbit =  new Book('The Hobbit', 'J.R.R. Tolkien', 295, 0);
